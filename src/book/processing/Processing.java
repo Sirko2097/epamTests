@@ -12,15 +12,17 @@ import java.util.Arrays;
 public class Processing {
     private Book[] books = new Book[7];
 
+    {
+        go();
+    }
+
     private void go() {
         Input input = new Input();
         input.addBook();
         books = input.getBooks();
     }
 
-    {
-        go();
-    }
+
 
     private void print(Book elem) {
         System.out.println();
@@ -33,7 +35,7 @@ public class Processing {
         System.out.println();
     }
 
-    public void printSameAuthor() throws NullPointerException{
+    public void printSameAuthor() {
 
         String userAuthor = null;
 
@@ -62,16 +64,19 @@ public class Processing {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Input publisher: ");
         String publish = null;
+
         try {
             publish = reader.readLine();
         } catch (Exception ex){
             ex.printStackTrace();
         }
+
         for (Book elem : books) {
             if (elem.getPublisher().equals(publish)){
                 print(elem);
             }
         }
+
     } //close prSamePub()
 
 
@@ -89,10 +94,11 @@ public class Processing {
                 ex.printStackTrace();
             }
 
-            if (year < 0){
-                System.err.print("Invalid input!");
+            if (year < 0 || year > 2017){
+                System.err.println("Invalid input!");
             }
-        } while (year < 0);
+
+        } while (year > 0 & year > 2017);
 
         for (Book elem : books) {
             if (year < elem.getYear()) {
@@ -111,8 +117,7 @@ public class Processing {
     }
 
     public void printAll(){
-        for (Book elem :
-                books) {
+        for (Book elem : books) {
             print(elem);
         }
     }
