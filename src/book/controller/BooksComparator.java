@@ -1,7 +1,7 @@
-package book.processing;
+package book.controller;
 
 
-import book.scheme.Book;
+import book.model.Book;
 
 import java.util.Comparator;
 

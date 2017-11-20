@@ -1,4 +1,4 @@
-package book.scheme;
+package book.model;
 
 
 public class Book {

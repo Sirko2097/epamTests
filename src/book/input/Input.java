@@ -1,10 +1,10 @@
 package book.input;
 
 
-import book.scheme.Book;
+import book.model.Book;
 
 public class Input {
-    private Book[] books = new Book[7];
+    private Book[] bookList = new Book[7];
 
     public void addBook(){
         Book book = new Book("Lord of The Rings", "Tolkien" ,"London",
@@ -23,18 +23,18 @@ public class Input {
                 2003, 936, 900);
 
 
-        books[0] = book;
-        books[1] = book1;
-        books[2] = book2;
-        books[3] = book3;
-        books[4] = book4;
-        books[5] = book5;
-        books[6] = book6;
+        bookList[0] = book;
+        bookList[1] = book1;
+        bookList[2] = book2;
+        bookList[3] = book3;
+        bookList[4] = book4;
+        bookList[5] = book5;
+        bookList[6] = book6;
 
     }
 
-    public Book[] getBooks() {
-        return books;
+    public Book[] getBookList() {
+        return bookList;
     }
 
 }

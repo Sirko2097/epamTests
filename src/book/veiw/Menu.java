@@ -1,13 +1,13 @@
 package book.veiw;
 
 import book.input.Input;
-import book.processing.Processing;
+import book.controller.Processing;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Menu {
+public class Menu implements MainMenu {
 
     public static void printMenu() {
         Input input = new Input();
@@ -19,7 +19,7 @@ public class Menu {
 
 
         while (true){
-            menu();
+            MainMenu.menu();
             try {
                 key = reader.readLine().charAt(0);
             } catch (IOException ex) {
@@ -52,13 +52,5 @@ public class Menu {
         }
     }
 
-    private static void menu() {
-        System.out.println("1) To find books with input author's name;");
-        System.out.println("2) List of books by the input publisher;");
-        System.out.println("3) Books after input year;");
-        System.out.println("4) Sort list by publisher;");
-        System.out.println("5) Print all books;");
-        System.out.println("0) Exit");
-        System.out.print("Input key on of the following keys> ");
-    }
+
 }

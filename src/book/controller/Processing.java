@@ -1,8 +1,8 @@
-package book.processing;
+package book.controller;
 
 
 import book.input.Input;
-import book.scheme.Book;
+import book.model.Book;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Processing {
-    private Book[] books = new Book[7];
+    private Book[] bookList = new Book[7];
 
     {
         go();
@@ -19,7 +19,7 @@ public class Processing {
     private void go() {
         Input input = new Input();
         input.addBook();
-        books = input.getBooks();
+        bookList = input.getBookList();
     }
 
 
@@ -47,7 +47,7 @@ public class Processing {
             e.printStackTrace();
         }
 
-        for (Book elem : books) {
+        for (Book elem : bookList) {
             try {
                 if (userAuthor.equals(elem.getAuthor())) {
                     print(elem);
@@ -71,7 +71,7 @@ public class Processing {
             ex.printStackTrace();
         }
 
-        for (Book elem : books) {
+        for (Book elem : bookList) {
             if (elem.getPublisher().equals(publish)){
                 print(elem);
             }
@@ -100,7 +100,7 @@ public class Processing {
 
         } while (year > 0 & year > 2017);
 
-        for (Book elem : books) {
+        for (Book elem : bookList) {
             if (year < elem.getYear()) {
                 print(elem);
             }
@@ -109,15 +109,15 @@ public class Processing {
 
     public void printSortedByPublisher() {
 
-        Arrays.sort(books, new BooksComparator());
+        Arrays.sort(bookList, new BooksComparator());
 
-        for (Book elem : books) {
+        for (Book elem : bookList) {
             print(elem);
         }
     }
 
     public void printAll(){
-        for (Book elem : books) {
+        for (Book elem : bookList) {
             print(elem);
         }
     }
