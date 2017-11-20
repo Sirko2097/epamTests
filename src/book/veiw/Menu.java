@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Menu implements MainMenu {
+public class Menu implements IMainMenu {
 
     public static void printMenu() {
         Input input = new Input();
@@ -19,7 +19,7 @@ public class Menu implements MainMenu {
 
 
         while (true){
-            MainMenu.menu();
+            IMainMenu.menu();
             try {
                 key = reader.readLine().charAt(0);
             } catch (IOException ex) {

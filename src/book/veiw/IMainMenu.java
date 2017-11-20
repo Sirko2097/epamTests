@@ -1,6 +1,6 @@
 package book.veiw;
 
-interface MainMenu {
+interface IMainMenu {
      static void menu() {
         System.out.println("1) To find books with input author's name;");
         System.out.println("2) List of books by the input publisher;");
